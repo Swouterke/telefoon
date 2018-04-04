@@ -38,6 +38,23 @@ namespace TelefoonWindow
             personen.Add(new Persoon("kleinzus", "14", "Familie", new BitmapImage(new Uri(@"images/kleinzus.jpg", UriKind.Relative))));
             personen.Add(new Persoon("tantenon", "15", "Familie", new BitmapImage(new Uri(@"images/tantenon.jpg", UriKind.Relative))));
             personen.Add(new Persoon("vader", "16", "Familie", new BitmapImage(new Uri(@"images/vader.jpg", UriKind.Relative))));
+
+            ComboBoxGroep.Items.Add("- alle groepen -");
+            ComboBoxGroep.Items.Add("Vrienden");
+            ComboBoxGroep.Items.Add("Familie");
+            ComboBoxGroep.Items.Add("Werk");
+            ComboBoxGroep.SelectedIndex = 0;
+        }
+
+        private void ComboBoxGroep_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ListBoxPersonen.Items.Clear();
+            foreach (Persoon persoon in personen)
+            {
+                if (persoon.Groep == ComboBoxGroep.SelectedItem.ToString() || ComboBoxGroep.SelectedIndex == 0)
+                    ListBoxPersonen.Items.Add(persoon);
+            }
+            ListBoxPersonen.Items.SortDescriptions.Add(new System.ComponentModel.SortDescription())
         }
     }
 }

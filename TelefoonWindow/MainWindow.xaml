@@ -15,8 +15,8 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <StackPanel Name="selections" Grid.Column="0">
-            <ComboBox Name="ComboBoxGroep" Grid.Row="0" Width="200" HorizontalAlignment="Center" Margin="40"/>
-            <ListBox Name="Personen" Grid.Row="1" Width="200" Height="150"/>
+            <ComboBox Name="ComboBoxGroep" Grid.Row="0" Width="200" HorizontalAlignment="Center" Margin="40" SelectionChanged="ComboBoxGroep_SelectionChanged"/>
+            <ListBox Name="ListBoxPersonen" Grid.Row="1" Width="200" Height="150"/>
         </StackPanel>
         <Button Name="ButtonCall" Grid.Column="1" Margin="10" Background="White">
             <Image Source="Images/telefoon2.jpg" Width="100" />
